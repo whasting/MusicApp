@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    if current_user
+      render @user
+    else
+      redirect_to new_user_url
+    end
+  end
+
   def destroy
   end
 
