@@ -9,6 +9,10 @@
 <body>
 
 <%= yield %>
-
+<footer>
+<% if current_user %>
+  <%= logout_button %>
+<% end %>
+</footer>
 </body>
 </html>
