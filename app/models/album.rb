@@ -17,6 +17,7 @@ class Album < ActiveRecord::Base
                      in: ["live", "studio"], allow_nil: true
   has_many :tracks
   belongs_to :band
+    dependent: :destroy
 
   def default_values
     self.live_or_studio ||= 'studio'

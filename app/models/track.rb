@@ -15,7 +15,8 @@ class Track < ActiveRecord::Base
   validates :track_title, :album_id, presence: true
   validates_inclusion_of :bonus_or_regular, in: ["bonus", "regular"],
                          allow_nil: true
-  belongs_to :album
+  belongs_to :album,
+    dependent: :destroy
 
   def default_values
     self.bonus_or_regular ||= 'regular'
