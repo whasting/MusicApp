@@ -11,4 +11,14 @@
 #
 
 class Album < ActiveRecord::Base
+  before_save :default_values
+  validates :band_id, :album_name, presence: true
+  validates_inclusion_of :live_or_studio ,
+                     in: ["live", "studio"], allow_nil: true
+  has_many :tracks
+  belongs_to :band
+
+  def default_values
+    self.live_or_studio ||= 'studio'
+  end
 end
