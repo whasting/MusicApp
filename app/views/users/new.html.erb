@@ -1,4 +1,14 @@
 <h1>CREATE USER</h1>
 <form action="<%= users_url %>" method="post">
-  <h2>GETTING THERE</h2>
+  <table>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td><input type="text" name="user[email]" value=""></td>
+    </tr>
+    <tr>
+      <td><label for="password">Password</label></td>
+      <td><input type="text" name="user[password]" value=""></td>
+    </tr>
+  </table>
+  <input type="submit" name="create_user" value="Submit">
 </form>
