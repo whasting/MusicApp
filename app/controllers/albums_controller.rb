@@ -17,15 +17,15 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find_by(album_params[:name])
-    render @album
+    #add Album.includes(:tracks) to preload data
+    @album = Album.find_by(id: params[:id])
   end
 
   def edit
   end
 
   def update
-    @album = Album.find_by(params[:id])
+    @album = Album.find_by(id: params[:id])
     if @album.update(album_params)
       redirect_to album_url(@album)
     else
@@ -35,7 +35,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = Album.find_by(params[:id]).destroy
+    @album = Album.find_by(id: params[:id]).destroy
     redirect_to albums_url
   end
 

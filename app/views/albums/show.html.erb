@@ -1,0 +1,8 @@
+<h1><%= @album.band.name %></h1>
+<h2><%= @album.album_name %></h2>
+<h3>Tracks</h3>
+<ul>
+  <% @album.tracks.each do |track| %>
+    <li><a href="<%= track_url(track) %>"><%= track.track_title %></a></li>
+  <% end %>
+</ul>

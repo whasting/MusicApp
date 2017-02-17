@@ -8,6 +8,7 @@
 #  bonus_or_regular :string
 #  created_at       :datetime
 #  updated_at       :datetime
+#  lyrics           :text
 #
 
 class Track < ActiveRecord::Base

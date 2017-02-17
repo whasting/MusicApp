@@ -16,7 +16,7 @@ class Album < ActiveRecord::Base
   validates_inclusion_of :live_or_studio ,
                      in: ["live", "studio"], allow_nil: true
   has_many :tracks
-  belongs_to :band
+  belongs_to :band,
     dependent: :destroy
 
   def default_values
